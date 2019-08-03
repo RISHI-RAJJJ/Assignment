@@ -52,11 +52,11 @@ handleFileInput(files: FileList) {
   var image = <HTMLCanvasElement>document.getElementById('blah');
 this.width = image.width;
 this.height = image.height;
-this.imageType = this.fileToUpload.type;
+
+  if(this.fileToUpload!=null){
+    this.imageType = this.fileToUpload.type;
 this.imageSize = this.fileToUpload.size;
 console.log(this.width+" "+this.height)
-  if(this.fileToUpload!=null){
-    
     const reader = new FileReader();
     
         reader.onload = e => this.imageSrc = reader.result;
